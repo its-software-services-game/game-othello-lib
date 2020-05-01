@@ -1,7 +1,7 @@
 using Its.Games.Core.Commons;
-using Its.Games.BoardGame2D.Commons;
+using Its.Games.BoardGame2D.Core.BoardGame2D;
 
-namespace Its.Games.BoardGame2D.Othello
+namespace Its.Games.Othello
 {
     public class OthlloBoard : BoardBase
     {
