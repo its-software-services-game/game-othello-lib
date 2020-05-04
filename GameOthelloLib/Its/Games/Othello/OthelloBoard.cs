@@ -37,5 +37,21 @@ namespace Its.Games.Othello
         {
             return maxCol;
         }
+
+        public int RowCount
+        {
+            get 
+            {
+                return maxRow;
+            }
+        }
+
+        public int ColumnCount
+        {
+            get 
+            {
+                return maxCol;
+            }
+        }  
     }
 }

@@ -1,5 +1,6 @@
 using Its.Games.Core.Commons;
 using Its.Games.Othello.Utils;
+using System.Collections.Generic;
 
 namespace Its.Games.Othello.Commons
 {
@@ -21,46 +22,40 @@ namespace Its.Games.Othello.Commons
         {
             //TODO : Throw exception here
         }
+        
+        public bool IsPlayable(IPlayer player)
+        {
+            //TODO : Throw exception here
+            return false;
+        }
 
         public bool IsPlayable(IMarker marker)
         {
-            return true;
+            bool IsPlayAble = OthelloRegulatorUtils.IsPlayAble(board, marker);
+            return IsPlayAble;
         }
 
         public bool IsValidMove(IMove move)
         {
-            ICoordinate c = move.Coordinate;
-            IMarker m = move.Mark;
-
-            IMarker currentMark = board.Get(c);
-            if (currentMark != null)
-            {
-                //Not an empty position
-                return false;
-            }
-
-            bool eatable = false;
-            foreach (MoveDirectionEnum direction in MoveDirectionEnum.GetValues(typeof(MoveDirectionEnum)))
-            {
-                bool isDirectionEatable = OthelloRegulatorUtils.IsFlipAble(board, c, m, direction);
-                eatable = eatable || isDirectionEatable;
-            }
-
-            return eatable;
-        }
-
-        public bool IsPlayable(IPlayer player)
-        {
-            return false;
+            bool isValid = OthelloRegulatorUtils.IsValidMove(board, move);
+            return isValid;
         }
 
         public bool IsOver()
         {
-            return true;
+            bool isOver = OthelloRegulatorUtils.IsOver(board);
+            return isOver;
         }
 
         public void Move(IMove move)
         {
-        } 
+            OthelloRegulatorUtils.Flip(board, move);
+        }
+
+        public List<ICoordinate> GetPlayAbleList(IMarker marker)
+        {
+            var list = OthelloRegulatorUtils.GetPlayAbleList(board, marker);
+            return list;
+        }
     }
 }
