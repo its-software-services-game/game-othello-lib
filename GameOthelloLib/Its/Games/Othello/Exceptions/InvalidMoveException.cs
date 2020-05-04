@@ -1,7 +1,7 @@
 using System;
 using Its.Games.Core.Commons;
 
-namespace Its.Games.Othello
+namespace Its.Games.Othello.Exceptions
 {
     public class InvalidMoveException : Exception
     {

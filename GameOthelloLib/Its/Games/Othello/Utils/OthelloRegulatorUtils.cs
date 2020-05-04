@@ -1,6 +1,7 @@
+using System.Collections.Generic;
 using Its.Games.Core.Commons;
 using Its.Games.Othello.Commons;
-using System.Collections.Generic;
+using Its.Games.Othello.Exceptions;
 
 namespace Its.Games.Othello.Utils
 {
