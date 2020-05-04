@@ -1,6 +1,7 @@
+using System;
+using System.Collections.Generic;
 using Its.Games.Core.Commons;
 using Its.Games.Othello.Utils;
-using System.Collections.Generic;
 
 namespace Its.Games.Othello.Commons
 {
@@ -20,13 +21,12 @@ namespace Its.Games.Othello.Commons
 
         public void Init()
         {
-            //TODO : Throw exception here
+            throw new NotSupportedException ();
         }
         
         public bool IsPlayable(IPlayer player)
         {
-            //TODO : Throw exception here
-            return false;
+            throw new NotSupportedException ();
         }
 
         public bool IsPlayable(IMarker marker)

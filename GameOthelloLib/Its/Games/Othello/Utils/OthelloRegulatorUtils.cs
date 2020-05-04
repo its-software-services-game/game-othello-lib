@@ -8,6 +8,7 @@ namespace Its.Games.Othello.Utils
     {
         private static bool IsFlipAble(IOthelloBoard  board,  ICoordinate startPosition, IMarker marker, MoveDirectionEnum direction)
         {
+            //TODO : Add code here
             return false;
         }
 
@@ -138,7 +139,7 @@ namespace Its.Games.Othello.Utils
 
             if (!flipAble)
             {
-                //TODO : Throw exception here
+                throw new InvalidMoveException(move);
             }
         } 
 
