@@ -9,7 +9,37 @@ namespace Its.Games.Othello.Utils
     {
         private static bool IsFlipAble(IOthelloBoard  board,  ICoordinate startPosition, IMarker marker, MoveDirectionEnum direction)
         {
-            //TODO : Add code here
+            ICoordinate pos = startPosition;
+            int opponentCnt = 0;
+            
+            pos = GetNextPosition(pos, direction);
+            bool isValidPosition = IsValidCoordinate(pos);
+            
+            while (isValidPosition)
+            {
+                IMarker mk = board.Get(pos);
+                if (mk == null)
+                {
+                    return false;
+                }
+
+                if (!mk.Name.Equals(marker.Name))
+                {
+                    opponentCnt++;
+                }
+                else if (opponentCnt > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+                pos = GetNextPosition(pos, direction);
+                isValidPosition = IsValidCoordinate(pos);                
+            }
+
             return false;
         }
 
@@ -22,7 +52,41 @@ namespace Its.Games.Othello.Utils
                 return false;
             }
 
-            //TODO : Add flip code here
+            ICoordinate pos = startPosition;
+            pos = GetNextPosition(pos, direction);
+            bool isValidPosition = IsValidCoordinate(pos);
+
+            while (isValidPosition)
+            {
+                IMarker mk = board.Get(pos);                
+                if (!mk.Name.Equals(marker.Name))
+                {
+                    IMarker opponentMark = mk.GetOpponentMarker();
+                    board.Put(pos, opponentMark);
+                }
+
+                pos = GetNextPosition(pos, direction);
+                isValidPosition = IsValidCoordinate(pos);                
+            }
+
+            return true;
+        }
+
+        private static bool IsValidCoordinate(ICoordinate pos)
+        {
+            int x = pos.X;
+            int y = pos.Y;
+
+            if ((x < 0) || (y < 0))
+            {
+                return false;
+            }
+
+            if ((x >= 8) || (y >= 8))
+            {
+                return false;
+            }
+
             return true;
         }
 

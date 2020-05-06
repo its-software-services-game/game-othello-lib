@@ -2,24 +2,19 @@ using Its.Games.Core.Commons;
 
 namespace Its.Games.Othello.Commons
 {
-    public abstract class OthelloMarker : IMarker, IOthelloMarker
+    public abstract class OthelloMarker : IMarker
     {
         private string name = "";
         private int id = -1;
 
         protected abstract string GetName();
         protected abstract int GetId();
+        public abstract IMarker GetOpponentMarker();
 
         public OthelloMarker()
         {
             id = GetId();
             name = GetName();
-        }
-
-        public bool IsSameSide(IMarker marker)
-        {
-            bool same = Name.Equals(marker.Name);
-            return same;
         }
 
         public int Id 

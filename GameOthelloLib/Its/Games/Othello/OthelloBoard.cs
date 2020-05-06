@@ -52,6 +52,6 @@ namespace Its.Games.Othello
             {
                 return maxCol;
             }
-        }  
+        }
     }
 }
