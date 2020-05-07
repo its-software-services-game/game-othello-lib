@@ -15,6 +15,11 @@ namespace Its.Games.Othello
             return board;
         }
 
+        public OthelloBoard() : base()
+        {
+            Init();
+        }
+
         public void Initialize(IMarker first, IMarker second)
         {
             Coordinate c1 = new Coordinate(3, 3);

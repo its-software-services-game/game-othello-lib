@@ -183,7 +183,7 @@ namespace Its.Games.Othello.Utils
             bool eatable = false;
             foreach (MoveDirectionEnum direction in MoveDirectionEnum.GetValues(typeof(MoveDirectionEnum)))
             {
-                bool isDirectionEatable = OthelloRegulatorUtils.IsFlipAble(board, c, m, direction);
+                bool isDirectionEatable = IsFlipAble(board, c, m, direction);
                 eatable = eatable || isDirectionEatable;
             }
 
