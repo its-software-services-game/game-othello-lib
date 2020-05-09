@@ -12,7 +12,7 @@ namespace Its.Games.Othello
 
         protected override int GetId()
         {
-            return 1;
+            return 2;
         }
 
         public override IMarker GetOpponentMarker()
