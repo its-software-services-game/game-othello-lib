@@ -99,6 +99,20 @@ namespace Its.Games.Othello
             bool isEqual = IsEqual(initBoard, board);
 
             Assert.IsFalse(isEqual, "Initial board state is wrong!!!");
-        }              
+        }
+
+        [Test]
+        public void BoardMaxRowTest()
+        {
+            var board = new OthelloBoard();
+            Assert.AreEqual(8, board.RowCount, "Expected row count to be 8!!!");
+        }
+
+        [Test]
+        public void BoardMaxColumnTest()
+        {
+            var board = new OthelloBoard();
+            Assert.AreEqual(8, board.ColumnCount, "Expected column count to be 8!!!");
+        }                  
     }
 }
