@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace Its.Games.Othello
+namespace Its.Games.Othello.Commons
 {
     public class OthelloMarkerTest
     {

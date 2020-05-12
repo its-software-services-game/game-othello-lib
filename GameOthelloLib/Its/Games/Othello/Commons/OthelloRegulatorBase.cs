@@ -57,5 +57,10 @@ namespace Its.Games.Othello.Commons
             var list = OthelloRegulatorUtils.GetPlayAbleList(board, marker);
             return list;
         }
+
+        public IOthelloBoard GetBoard()
+        {
+            return board;
+        }
     }
 }

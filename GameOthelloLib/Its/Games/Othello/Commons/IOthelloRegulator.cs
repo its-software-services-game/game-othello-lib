@@ -7,5 +7,6 @@ namespace Its.Games.Othello.Commons
     {
         bool IsPlayable(IMarker marker);
         List<ICoordinate> GetPlayAbleList(IMarker marker);
+        IOthelloBoard GetBoard();
     }
 }
