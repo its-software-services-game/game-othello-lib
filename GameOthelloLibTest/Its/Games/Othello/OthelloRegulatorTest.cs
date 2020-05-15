@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 using Its.Games.Core.Commons;
 
@@ -85,6 +86,22 @@ namespace Its.Games.Othello
             bool isEqual = IsEqual(initBoard, board);
 
             Assert.IsTrue(isEqual, "Initial board state is wrong!!!");
-        }                       
+        }
+
+        [Test]
+        public void InitNotSupportExceptionTest()
+        {
+            var brd = new OthelloBoard();
+            var regulator = new OthelloRegulator(brd, playerA, playerB);        
+            var ex = Assert.Throws<NotSupportedException>(() => regulator.Init());        
+        } 
+
+        [Test]
+        public void IsPlayableNotSupportExceptionTest()
+        {
+            var brd = new OthelloBoard();
+            var regulator = new OthelloRegulator(brd, playerA, playerB);        
+            var ex = Assert.Throws<NotSupportedException>(() => regulator.IsPlayable((IPlayer) null));        
+        }                                    
     }
 }
